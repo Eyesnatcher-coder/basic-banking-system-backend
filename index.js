@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import e from "express";
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded())
@@ -127,8 +129,6 @@ app.get("/transaction_history",async(req,res)=>{
     res.send(transaction_money);
 })
 
-
-const port = 80; 
 
 app.listen(port,()=>{
     console.log("server is running on port",port)
